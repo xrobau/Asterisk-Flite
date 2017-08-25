@@ -51,11 +51,6 @@
 #define DEF_VOICE "kal"
 #define DEF_DIR "/tmp"
 
-EXPORT_DEF struct ast_module* self_module(void)
-{
-	return ast_module_info->self;
-}
-
 cst_voice *register_cmu_us_awb(void);
 void unregister_cmu_us_awb(cst_voice *v);
 
@@ -294,3 +289,8 @@ AST_MODULE_INFO(ASTERISK_GPL_KEY, AST_MODFLAG_DEFAULT, "Flite TTS Interface",
 	.unload = unload_module,
 	.reload = reload_module,
 );
+
+EXPORT_DEF struct ast_module* self_module(void)
+{
+	return ast_module_info->self;
+}
