@@ -33,7 +33,6 @@
 
 #include "asterisk.h"
 
-ASTERISK_REGISTER_FILE()
 #define AST_MODULE_SELF self_module()
 
 #include <stdio.h>
