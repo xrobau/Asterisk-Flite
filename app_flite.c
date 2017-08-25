@@ -33,9 +33,6 @@
 
 #include "asterisk.h"
 
-ASTERISK_REGISTER_FILE()
-#define AST_MODULE_SELF self_module()
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -292,3 +289,8 @@ AST_MODULE_INFO(ASTERISK_GPL_KEY, AST_MODFLAG_DEFAULT, "Flite TTS Interface",
 	.unload = unload_module,
 	.reload = reload_module,
 );
+
+EXPORT_DEF struct ast_module* self_module(void)
+{
+	return ast_module_info->self;
+}
