@@ -33,8 +33,6 @@
 
 #include "asterisk.h"
 
-#define AST_MODULE_SELF self_module()
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -52,6 +50,11 @@
 #define DEF_RATE 8000
 #define DEF_VOICE "kal"
 #define DEF_DIR "/tmp"
+
+EXPORT_DEF struct ast_module* self_module(void)
+{
+	return ast_module_info->self;
+}
 
 cst_voice *register_cmu_us_awb(void);
 void unregister_cmu_us_awb(cst_voice *v);
